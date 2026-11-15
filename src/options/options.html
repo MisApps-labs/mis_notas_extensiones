@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis Notas</title>
+  <link rel="icon" href="../../icons/icon32.png">
+  <link rel="stylesheet" href="../ui/common.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <img src="../ui/logo.png" alt="" width="48" height="48">
+      <div>
+        <h1 data-i18n="ext_name">Mis Notas</h1>
+        <p class="muted" data-i18n="opt_subtitle"></p>
+      </div>
+    </header>
+
+    <!-- 1. Cuenta de Nextcloud -->
+    <section class="card" id="account">
+      <h2><span class="step">1</span><span data-i18n="opt_account_title"></span></h2>
+
+      <div id="account-connected" hidden>
+        <p id="account-summary"></p>
+        <button id="disconnect" type="button" class="danger" data-i18n="opt_disconnect"></button>
+      </div>
+
+      <div id="account-form" hidden>
+        <p class="muted" data-i18n="opt_account_help"></p>
+        <label for="server" data-i18n="opt_server"></label>
+        <input id="server" type="url" placeholder="https://nube.ejemplo.com" autocomplete="url" spellcheck="false">
+
+        <div class="row actions">
+          <button id="login-flow" type="button" data-i18n="opt_login_button"></button>
+          <button id="show-manual" type="button" class="text" data-i18n="opt_manual_toggle"></button>
+        </div>
+
+        <div id="login-waiting" class="notice ok" hidden>
+          <span class="spinner"></span> <span data-i18n="opt_login_waiting"></span>
+          <button id="login-cancel" type="button" class="text" data-i18n="cancel"></button>
+        </div>
+
+        <div id="manual" hidden>
+          <p class="muted" data-i18n="opt_manual_help"></p>
+          <div class="grid2">
+            <div>
+              <label for="username" data-i18n="opt_username"></label>
+              <input id="username" type="text" autocomplete="username" spellcheck="false">
+            </div>
+            <div>
+              <label for="app-password" data-i18n="opt_app_password"></label>
+              <input id="app-password" type="password" autocomplete="off">
+            </div>
+          </div>
+          <div class="row actions">
+            <button id="connect" type="button" data-i18n="opt_connect"></button>
+          </div>
+        </div>
+      </div>
+      <div id="account-notice" class="notice"></div>
+    </section>
+
+    <!-- 2. Contraseña maestra -->
+    <section class="card" id="vault">
+      <h2><span class="step">2</span><span data-i18n="opt_vault_title"></span></h2>
+
+      <p id="vault-needs-account" class="muted" data-i18n="opt_vault_needs_account"></p>
+
+      <div id="vault-unlocked" hidden>
+        <p data-i18n="opt_vault_unlocked"></p>
+        <button id="lock" type="button" class="danger" data-i18n="opt_forget_key"></button>
+      </div>
+
+      <div id="vault-form" hidden>
+        <p class="muted" data-i18n="opt_vault_help"></p>
+        <label for="master" data-i18n="opt_master_password"></label>
+        <input id="master" type="password" autocomplete="off">
+        <label class="check">
+          <input id="remember" type="checkbox" checked>
+          <span><span data-i18n="opt_remember_key"></span><small data-i18n="opt_remember_key_help"></small></span>
+        </label>
+        <div class="row actions">
+          <button id="unlock" type="button" data-i18n="opt_unlock"></button>
+        </div>
+      </div>
+      <div id="vault-notice" class="notice"></div>
+    </section>
+
+    <!-- 3. Al guardar -->
+    <section class="card" id="prefs">
+      <h2><span class="step">3</span><span data-i18n="opt_prefs_title"></span></h2>
+
+      <label for="default-folder" data-i18n="opt_default_folder"></label>
+      <div class="row">
+        <select id="default-folder" class="grow"></select>
+        <button id="refresh-folders" type="button" class="secondary" data-i18n="opt_refresh"></button>
+      </div>
+      <p class="muted small" data-i18n="opt_default_folder_help"></p>
+
+      <label class="check">
+        <input id="pref-images" type="checkbox">
+        <span><span data-i18n="opt_save_images"></span><small data-i18n="opt_save_images_help"></small></span>
+      </label>
+      <div id="images-permission" class="notice warn" hidden>
+        <span data-i18n="opt_images_permission"></span>
+        <button id="grant-images" type="button" class="text" data-i18n="opt_images_permission_button"></button>
+      </div>
+
+      <label class="check">
+        <input id="pref-source" type="checkbox">
+        <span><span data-i18n="opt_add_source"></span><small data-i18n="opt_add_source_help"></small></span>
+      </label>
+
+      <label class="check">
+        <input id="pref-tasks" type="checkbox">
+        <span><span data-i18n="opt_ingredients_tasks"></span><small data-i18n="opt_ingredients_tasks_help"></small></span>
+      </label>
+
+      <p class="muted small"><span data-i18n="opt_shortcut"></span> <a href="#" id="shortcuts" data-i18n="opt_shortcut_link"></a></p>
+    </section>
+
+    <!-- Pendientes -->
+    <section class="card" id="queue" hidden>
+      <h2 data-i18n="opt_queue_title"></h2>
+      <p class="muted" data-i18n="opt_queue_help"></p>
+      <ul id="queue-list"></ul>
+      <div class="row actions">
+        <button id="retry" type="button" data-i18n="opt_retry"></button>
+        <button id="discard" type="button" class="danger" data-i18n="opt_discard"></button>
+      </div>
+      <div id="queue-notice" class="notice"></div>
+    </section>
+
+    <p class="muted small about" data-i18n="opt_about"></p>
+  </div>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

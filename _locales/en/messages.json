@@ -1,0 +1,323 @@
+{
+  "ext_name": {
+    "message": "Mis Notas"
+  },
+  "ext_description": {
+    "message": "Save recipes, articles and links to Mis Notas, encrypted and synced with your own Nextcloud."
+  },
+  "cmd_open": {
+    "message": "Save the current page"
+  },
+  "menu_save_page": {
+    "message": "Save page to Mis Notas"
+  },
+  "menu_save_selection": {
+    "message": "Save selection to Mis Notas"
+  },
+  "menu_save_link": {
+    "message": "Save link to Mis Notas"
+  },
+  "menu_save_image": {
+    "message": "Save image to Mis Notas"
+  },
+  "badge_pending": {
+    "message": "$1 waiting to upload"
+  },
+  "source_label": {
+    "message": "Source"
+  },
+  "recipe_servings": {
+    "message": "Servings"
+  },
+  "recipe_prep": {
+    "message": "Prep"
+  },
+  "recipe_cook": {
+    "message": "Cook"
+  },
+  "recipe_total": {
+    "message": "Total"
+  },
+  "recipe_calories": {
+    "message": "Calories"
+  },
+  "recipe_ingredients": {
+    "message": "Ingredients"
+  },
+  "recipe_steps": {
+    "message": "Instructions"
+  },
+  "popup_settings": {
+    "message": "Settings"
+  },
+  "mode_recipe": {
+    "message": "Recipe"
+  },
+  "mode_article": {
+    "message": "Article"
+  },
+  "mode_selection": {
+    "message": "Selection"
+  },
+  "mode_page": {
+    "message": "Page"
+  },
+  "mode_link": {
+    "message": "Link"
+  },
+  "field_title": {
+    "message": "Title"
+  },
+  "field_folder": {
+    "message": "Folder"
+  },
+  "field_content": {
+    "message": "Content (Markdown)"
+  },
+  "folder_none": {
+    "message": "No folder"
+  },
+  "folder_new_option": {
+    "message": "＋ New folder…"
+  },
+  "folder_new_placeholder": {
+    "message": "Folder name"
+  },
+  "folder_create": {
+    "message": "Create"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "opt_save_images_short": {
+    "message": "Keep a copy of the images"
+  },
+  "popup_not_scriptable": {
+    "message": "Only the link can be saved on this page."
+  },
+  "popup_folder_queued": {
+    "message": "Folder created. It will be uploaded when you are back online."
+  },
+  "popup_empty": {
+    "message": "The note is empty."
+  },
+  "popup_saved": {
+    "message": "Saved to Mis Notas."
+  },
+  "popup_queued": {
+    "message": "Saved in the browser; it will be uploaded to Nextcloud as soon as possible"
+  },
+  "popup_open_settings": {
+    "message": "Open settings"
+  },
+  "popup_not_configured": {
+    "message": "Connect your Nextcloud to start saving notes."
+  },
+  "popup_locked": {
+    "message": "Enter your master password to encrypt your notes."
+  },
+  "popup_unlock": {
+    "message": "Unlock"
+  },
+  "err_not_configured": {
+    "message": "No Nextcloud account connected."
+  },
+  "err_locked": {
+    "message": "Master password needed (in Settings)."
+  },
+  "err_auth": {
+    "message": "Nextcloud rejected the user name or app password."
+  },
+  "err_network": {
+    "message": "Cannot reach the server."
+  },
+  "err_server": {
+    "message": "The server returned an error."
+  },
+  "err_unknown": {
+    "message": "Something went wrong."
+  },
+  "err_root_missing": {
+    "message": "This account has no MisNotas folder yet. Turn on sync in the Android or desktop app first."
+  },
+  "err_vault_missing": {
+    "message": "keyinfo.json is missing from the MisNotas folder. Sync from the Android or desktop app first."
+  },
+  "err_vault_changed": {
+    "message": "The master password was changed on another device. Enter it again in Settings."
+  },
+  "err_folder_name": {
+    "message": "Enter a folder name."
+  },
+  "err_server_empty": {
+    "message": "Enter your Nextcloud address."
+  },
+  "err_server_invalid": {
+    "message": "The server address is not valid."
+  },
+  "err_login_flow": {
+    "message": "Could not sign in with Nextcloud. Try an app password instead."
+  },
+  "err_permission": {
+    "message": "Without permission to access your server the extension cannot sync."
+  },
+  "err_fields": {
+    "message": "Fill in the user name and app password."
+  },
+  "err_wrong_password": {
+    "message": "Wrong master password."
+  },
+  "opt_subtitle": {
+    "message": "Save what you find on the web, encrypted in your Nextcloud."
+  },
+  "opt_account_title": {
+    "message": "Nextcloud account"
+  },
+  "opt_account_help": {
+    "message": "Use the same server as in the Android or desktop app. Notes are stored in the MisNotas folder."
+  },
+  "opt_server": {
+    "message": "Server"
+  },
+  "opt_login_button": {
+    "message": "Sign in with Nextcloud"
+  },
+  "opt_manual_toggle": {
+    "message": "Use an app password"
+  },
+  "opt_login_waiting": {
+    "message": "Grant access in the Nextcloud tab that just opened…"
+  },
+  "opt_manual_help": {
+    "message": "Create one in Nextcloud → Personal settings → Security → Devices & sessions. Do not use your regular password."
+  },
+  "opt_username": {
+    "message": "User name"
+  },
+  "opt_app_password": {
+    "message": "App password"
+  },
+  "opt_connect": {
+    "message": "Connect"
+  },
+  "opt_connected_as": {
+    "message": "Connected as $1 on $2."
+  },
+  "opt_connected_ok": {
+    "message": "Account connected."
+  },
+  "opt_disconnect": {
+    "message": "Disconnect"
+  },
+  "opt_disconnect_confirm": {
+    "message": "Disconnect the account from this browser? Your notes stay in Nextcloud."
+  },
+  "opt_disconnect_confirm_pending": {
+    "message": "$1 item(s) have not been uploaded and will be lost. Disconnect anyway?"
+  },
+  "opt_vault_title": {
+    "message": "Master password"
+  },
+  "opt_vault_needs_account": {
+    "message": "Connect your Nextcloud account first."
+  },
+  "opt_vault_help": {
+    "message": "The same one you use in the apps. It never leaves this browser: notes are encrypted with it before they are sent."
+  },
+  "opt_master_password": {
+    "message": "Master password"
+  },
+  "opt_remember_key": {
+    "message": "Remember in this browser"
+  },
+  "opt_remember_key_help": {
+    "message": "The derived key is stored, not the password, and the browser does not allow reading it. If unchecked, you will be asked every time you open the browser."
+  },
+  "opt_unlock": {
+    "message": "Unlock"
+  },
+  "opt_unlocked_ok": {
+    "message": "Password verified."
+  },
+  "opt_vault_unlocked": {
+    "message": "Ready. Notes are encrypted in the browser before being sent to Nextcloud."
+  },
+  "opt_forget_key": {
+    "message": "Forget the key"
+  },
+  "opt_prefs_title": {
+    "message": "When saving"
+  },
+  "opt_default_folder": {
+    "message": "Default folder"
+  },
+  "opt_refresh": {
+    "message": "Refresh"
+  },
+  "opt_default_folder_help": {
+    "message": "Used by the context menu. The extension window remembers the last folder you chose."
+  },
+  "opt_save_images": {
+    "message": "Keep a copy of the images"
+  },
+  "opt_save_images_help": {
+    "message": "They are shrunk to WebP and uploaded encrypted, like in the apps, so they do not depend on the original site."
+  },
+  "opt_images_permission": {
+    "message": "Copying images from any site needs permission to download them. Without it, some will stay as links."
+  },
+  "opt_images_permission_button": {
+    "message": "Grant permission"
+  },
+  "opt_add_source": {
+    "message": "Add the source"
+  },
+  "opt_add_source_help": {
+    "message": "A link to the original page at the end of the note."
+  },
+  "opt_ingredients_tasks": {
+    "message": "Ingredients as a checklist"
+  },
+  "opt_ingredients_tasks_help": {
+    "message": "In recipes, so you can tick them off while shopping or cooking."
+  },
+  "opt_shortcut": {
+    "message": "Keyboard shortcut: Alt+Shift+S."
+  },
+  "opt_shortcut_link": {
+    "message": "Change"
+  },
+  "opt_queue_title": {
+    "message": "Waiting to upload"
+  },
+  "opt_queue_help": {
+    "message": "They are already encrypted in this browser and are retried every 15 minutes."
+  },
+  "queue_note": {
+    "message": "Note"
+  },
+  "queue_folder": {
+    "message": "Folder"
+  },
+  "opt_retry": {
+    "message": "Retry now"
+  },
+  "opt_discard": {
+    "message": "Discard"
+  },
+  "opt_discard_confirm": {
+    "message": "Discard everything pending? This cannot be undone."
+  },
+  "opt_queue_still": {
+    "message": "$1 still waiting."
+  },
+  "opt_queue_done": {
+    "message": "Everything uploaded."
+  },
+  "opt_about": {
+    "message": "Mis Notas for browsers · Free software (GPL v3) · No ads, no trackers"
+  }
+}

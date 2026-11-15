@@ -1,0 +1,323 @@
+{
+  "ext_name": {
+    "message": "Mis Notas"
+  },
+  "ext_description": {
+    "message": "Enregistrez recettes, articles et liens dans Mis Notas, chiffrés et synchronisés avec votre Nextcloud."
+  },
+  "cmd_open": {
+    "message": "Enregistrer la page actuelle"
+  },
+  "menu_save_page": {
+    "message": "Enregistrer la page dans Mis Notas"
+  },
+  "menu_save_selection": {
+    "message": "Enregistrer la sélection dans Mis Notas"
+  },
+  "menu_save_link": {
+    "message": "Enregistrer le lien dans Mis Notas"
+  },
+  "menu_save_image": {
+    "message": "Enregistrer l'image dans Mis Notas"
+  },
+  "badge_pending": {
+    "message": "$1 en attente d’envoi"
+  },
+  "source_label": {
+    "message": "Source"
+  },
+  "recipe_servings": {
+    "message": "Portions"
+  },
+  "recipe_prep": {
+    "message": "Préparation"
+  },
+  "recipe_cook": {
+    "message": "Cuisson"
+  },
+  "recipe_total": {
+    "message": "Total"
+  },
+  "recipe_calories": {
+    "message": "Calories"
+  },
+  "recipe_ingredients": {
+    "message": "Ingrédients"
+  },
+  "recipe_steps": {
+    "message": "Étapes"
+  },
+  "popup_settings": {
+    "message": "Paramètres"
+  },
+  "mode_recipe": {
+    "message": "Recette"
+  },
+  "mode_article": {
+    "message": "Article"
+  },
+  "mode_selection": {
+    "message": "Sélection"
+  },
+  "mode_page": {
+    "message": "Page"
+  },
+  "mode_link": {
+    "message": "Lien"
+  },
+  "field_title": {
+    "message": "Titre"
+  },
+  "field_folder": {
+    "message": "Dossier"
+  },
+  "field_content": {
+    "message": "Contenu (Markdown)"
+  },
+  "folder_none": {
+    "message": "Aucun dossier"
+  },
+  "folder_new_option": {
+    "message": "＋ Nouveau dossier…"
+  },
+  "folder_new_placeholder": {
+    "message": "Nom du dossier"
+  },
+  "folder_create": {
+    "message": "Créer"
+  },
+  "cancel": {
+    "message": "Annuler"
+  },
+  "save": {
+    "message": "Enregistrer"
+  },
+  "opt_save_images_short": {
+    "message": "Conserver une copie des images"
+  },
+  "popup_not_scriptable": {
+    "message": "Sur cette page, seul le lien peut être enregistré."
+  },
+  "popup_folder_queued": {
+    "message": "Dossier créé. Il sera envoyé dès que la connexion reviendra."
+  },
+  "popup_empty": {
+    "message": "La note est vide."
+  },
+  "popup_saved": {
+    "message": "Enregistrée dans Mis Notas."
+  },
+  "popup_queued": {
+    "message": "Enregistrée dans le navigateur ; elle sera envoyée à Nextcloud dès que possible"
+  },
+  "popup_open_settings": {
+    "message": "Ouvrir les paramètres"
+  },
+  "popup_not_configured": {
+    "message": "Connectez votre Nextcloud pour commencer à enregistrer des notes."
+  },
+  "popup_locked": {
+    "message": "Saisissez votre mot de passe principal pour chiffrer vos notes."
+  },
+  "popup_unlock": {
+    "message": "Déverrouiller"
+  },
+  "err_not_configured": {
+    "message": "Aucun compte Nextcloud connecté."
+  },
+  "err_locked": {
+    "message": "Mot de passe principal requis (dans les paramètres)."
+  },
+  "err_auth": {
+    "message": "Nextcloud a refusé l'utilisateur ou le mot de passe d'application."
+  },
+  "err_network": {
+    "message": "Impossible de joindre le serveur."
+  },
+  "err_server": {
+    "message": "Le serveur a renvoyé une erreur."
+  },
+  "err_unknown": {
+    "message": "Une erreur inattendue est survenue."
+  },
+  "err_root_missing": {
+    "message": "Ce compte n'a pas encore de dossier MisNotas. Activez d'abord la synchronisation dans l'application Android ou de bureau."
+  },
+  "err_vault_missing": {
+    "message": "keyinfo.json est introuvable dans le dossier MisNotas. Synchronisez d'abord depuis l'application Android ou de bureau."
+  },
+  "err_vault_changed": {
+    "message": "Le mot de passe principal a été modifié sur un autre appareil. Saisissez-le à nouveau dans les paramètres."
+  },
+  "err_folder_name": {
+    "message": "Saisissez un nom de dossier."
+  },
+  "err_server_empty": {
+    "message": "Saisissez l'adresse de votre Nextcloud."
+  },
+  "err_server_invalid": {
+    "message": "L'adresse du serveur n'est pas valide."
+  },
+  "err_login_flow": {
+    "message": "Impossible de se connecter avec Nextcloud. Essayez un mot de passe d'application."
+  },
+  "err_permission": {
+    "message": "Sans l'autorisation d'accéder à votre serveur, l'extension ne peut pas synchroniser."
+  },
+  "err_fields": {
+    "message": "Renseignez l'utilisateur et le mot de passe d'application."
+  },
+  "err_wrong_password": {
+    "message": "Mot de passe principal incorrect."
+  },
+  "opt_subtitle": {
+    "message": "Enregistrez ce que vous trouvez sur le web, chiffré dans votre Nextcloud."
+  },
+  "opt_account_title": {
+    "message": "Compte Nextcloud"
+  },
+  "opt_account_help": {
+    "message": "Utilisez le même serveur que dans l'application Android ou de bureau. Les notes sont enregistrées dans le dossier MisNotas."
+  },
+  "opt_server": {
+    "message": "Serveur"
+  },
+  "opt_login_button": {
+    "message": "Se connecter avec Nextcloud"
+  },
+  "opt_manual_toggle": {
+    "message": "Utiliser un mot de passe d'application"
+  },
+  "opt_login_waiting": {
+    "message": "Autorisez l'accès dans l'onglet Nextcloud qui vient de s'ouvrir…"
+  },
+  "opt_manual_help": {
+    "message": "Créez-le dans Nextcloud → Paramètres personnels → Sécurité → Appareils et sessions. N'utilisez pas votre mot de passe habituel."
+  },
+  "opt_username": {
+    "message": "Nom d'utilisateur"
+  },
+  "opt_app_password": {
+    "message": "Mot de passe d'application"
+  },
+  "opt_connect": {
+    "message": "Connecter"
+  },
+  "opt_connected_as": {
+    "message": "Connecté en tant que $1 sur $2."
+  },
+  "opt_connected_ok": {
+    "message": "Compte connecté."
+  },
+  "opt_disconnect": {
+    "message": "Déconnecter"
+  },
+  "opt_disconnect_confirm": {
+    "message": "Déconnecter le compte de ce navigateur ? Vos notes restent dans Nextcloud."
+  },
+  "opt_disconnect_confirm_pending": {
+    "message": "$1 élément(s) non envoyé(s) seront perdus. Déconnecter quand même ?"
+  },
+  "opt_vault_title": {
+    "message": "Mot de passe principal"
+  },
+  "opt_vault_needs_account": {
+    "message": "Connectez d'abord votre compte Nextcloud."
+  },
+  "opt_vault_help": {
+    "message": "Le même que dans les applications. Il ne quitte jamais ce navigateur : les notes sont chiffrées avec lui avant l'envoi."
+  },
+  "opt_master_password": {
+    "message": "Mot de passe principal"
+  },
+  "opt_remember_key": {
+    "message": "Mémoriser dans ce navigateur"
+  },
+  "opt_remember_key_help": {
+    "message": "C'est la clé dérivée qui est enregistrée, pas le mot de passe, et le navigateur ne permet pas de la lire. Sinon, il sera demandé à chaque ouverture du navigateur."
+  },
+  "opt_unlock": {
+    "message": "Déverrouiller"
+  },
+  "opt_unlocked_ok": {
+    "message": "Mot de passe vérifié."
+  },
+  "opt_vault_unlocked": {
+    "message": "Prêt. Les notes sont chiffrées dans le navigateur avant d’être envoyées à Nextcloud."
+  },
+  "opt_forget_key": {
+    "message": "Oublier la clé"
+  },
+  "opt_prefs_title": {
+    "message": "Lors de l’enregistrement"
+  },
+  "opt_default_folder": {
+    "message": "Dossier par défaut"
+  },
+  "opt_refresh": {
+    "message": "Actualiser"
+  },
+  "opt_default_folder_help": {
+    "message": "Utilisé par le menu contextuel. La fenêtre de l'extension mémorise le dernier dossier choisi."
+  },
+  "opt_save_images": {
+    "message": "Conserver une copie des images"
+  },
+  "opt_save_images_help": {
+    "message": "Elles sont réduites en WebP et envoyées chiffrées, comme dans les applications : elles ne dépendent plus du site d'origine."
+  },
+  "opt_images_permission": {
+    "message": "Pour copier les images de n'importe quel site, l'autorisation de les télécharger est nécessaire. Sans elle, certaines resteront des liens."
+  },
+  "opt_images_permission_button": {
+    "message": "Autoriser"
+  },
+  "opt_add_source": {
+    "message": "Ajouter la source"
+  },
+  "opt_add_source_help": {
+    "message": "Un lien vers la page d'origine à la fin de la note."
+  },
+  "opt_ingredients_tasks": {
+    "message": "Ingrédients en liste de tâches"
+  },
+  "opt_ingredients_tasks_help": {
+    "message": "Dans les recettes, pour les cocher en faisant les courses ou en cuisinant."
+  },
+  "opt_shortcut": {
+    "message": "Raccourci clavier : Alt+Maj+S."
+  },
+  "opt_shortcut_link": {
+    "message": "Modifier"
+  },
+  "opt_queue_title": {
+    "message": "En attente d’envoi"
+  },
+  "opt_queue_help": {
+    "message": "Elles sont déjà chiffrées dans ce navigateur et renvoyées toutes les 15 minutes."
+  },
+  "queue_note": {
+    "message": "Note"
+  },
+  "queue_folder": {
+    "message": "Dossier"
+  },
+  "opt_retry": {
+    "message": "Réessayer"
+  },
+  "opt_discard": {
+    "message": "Supprimer"
+  },
+  "opt_discard_confirm": {
+    "message": "Supprimer tout ce qui est en attente ? Action irréversible."
+  },
+  "opt_queue_still": {
+    "message": "Encore $1 en attente."
+  },
+  "opt_queue_done": {
+    "message": "Tout est envoyé."
+  },
+  "opt_about": {
+    "message": "Mis Notas pour navigateurs · Logiciel libre (GPL v3) · Sans publicité ni traqueurs"
+  }
+}

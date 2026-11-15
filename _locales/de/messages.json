@@ -1,0 +1,323 @@
+{
+  "ext_name": {
+    "message": "Mis Notas"
+  },
+  "ext_description": {
+    "message": "Speichere Rezepte, Artikel und Links in Mis Notas – verschlüsselt und mit deiner Nextcloud synchronisiert."
+  },
+  "cmd_open": {
+    "message": "Aktuelle Seite speichern"
+  },
+  "menu_save_page": {
+    "message": "Seite in Mis Notas speichern"
+  },
+  "menu_save_selection": {
+    "message": "Auswahl in Mis Notas speichern"
+  },
+  "menu_save_link": {
+    "message": "Link in Mis Notas speichern"
+  },
+  "menu_save_image": {
+    "message": "Bild in Mis Notas speichern"
+  },
+  "badge_pending": {
+    "message": "$1 warten auf Upload"
+  },
+  "source_label": {
+    "message": "Quelle"
+  },
+  "recipe_servings": {
+    "message": "Portionen"
+  },
+  "recipe_prep": {
+    "message": "Vorbereitung"
+  },
+  "recipe_cook": {
+    "message": "Kochzeit"
+  },
+  "recipe_total": {
+    "message": "Gesamt"
+  },
+  "recipe_calories": {
+    "message": "Kalorien"
+  },
+  "recipe_ingredients": {
+    "message": "Zutaten"
+  },
+  "recipe_steps": {
+    "message": "Zubereitung"
+  },
+  "popup_settings": {
+    "message": "Einstellungen"
+  },
+  "mode_recipe": {
+    "message": "Rezept"
+  },
+  "mode_article": {
+    "message": "Artikel"
+  },
+  "mode_selection": {
+    "message": "Auswahl"
+  },
+  "mode_page": {
+    "message": "Seite"
+  },
+  "mode_link": {
+    "message": "Link"
+  },
+  "field_title": {
+    "message": "Titel"
+  },
+  "field_folder": {
+    "message": "Ordner"
+  },
+  "field_content": {
+    "message": "Inhalt (Markdown)"
+  },
+  "folder_none": {
+    "message": "Kein Ordner"
+  },
+  "folder_new_option": {
+    "message": "＋ Neuer Ordner…"
+  },
+  "folder_new_placeholder": {
+    "message": "Ordnername"
+  },
+  "folder_create": {
+    "message": "Erstellen"
+  },
+  "cancel": {
+    "message": "Abbrechen"
+  },
+  "save": {
+    "message": "Speichern"
+  },
+  "opt_save_images_short": {
+    "message": "Kopie der Bilder speichern"
+  },
+  "popup_not_scriptable": {
+    "message": "Auf dieser Seite kann nur der Link gespeichert werden."
+  },
+  "popup_folder_queued": {
+    "message": "Ordner erstellt. Er wird hochgeladen, sobald wieder eine Verbindung besteht."
+  },
+  "popup_empty": {
+    "message": "Die Notiz ist leer."
+  },
+  "popup_saved": {
+    "message": "In Mis Notas gespeichert."
+  },
+  "popup_queued": {
+    "message": "Im Browser gespeichert; wird so bald wie möglich zu Nextcloud hochgeladen"
+  },
+  "popup_open_settings": {
+    "message": "Einstellungen öffnen"
+  },
+  "popup_not_configured": {
+    "message": "Verbinde deine Nextcloud, um Notizen zu speichern."
+  },
+  "popup_locked": {
+    "message": "Gib dein Master-Passwort ein, um deine Notizen zu verschlüsseln."
+  },
+  "popup_unlock": {
+    "message": "Entsperren"
+  },
+  "err_not_configured": {
+    "message": "Kein Nextcloud-Konto verbunden."
+  },
+  "err_locked": {
+    "message": "Master-Passwort erforderlich (in den Einstellungen)."
+  },
+  "err_auth": {
+    "message": "Nextcloud hat den Benutzernamen oder das App-Passwort abgelehnt."
+  },
+  "err_network": {
+    "message": "Der Server ist nicht erreichbar."
+  },
+  "err_server": {
+    "message": "Der Server hat einen Fehler gemeldet."
+  },
+  "err_unknown": {
+    "message": "Ein unerwarteter Fehler ist aufgetreten."
+  },
+  "err_root_missing": {
+    "message": "Dieses Konto hat noch keinen Ordner MisNotas. Aktiviere zuerst die Synchronisierung in der Android- oder Desktop-App."
+  },
+  "err_vault_missing": {
+    "message": "keyinfo.json fehlt im Ordner MisNotas. Synchronisiere zuerst aus der Android- oder Desktop-App."
+  },
+  "err_vault_changed": {
+    "message": "Das Master-Passwort wurde auf einem anderen Gerät geändert. Gib es in den Einstellungen erneut ein."
+  },
+  "err_folder_name": {
+    "message": "Gib einen Ordnernamen ein."
+  },
+  "err_server_empty": {
+    "message": "Gib die Adresse deiner Nextcloud ein."
+  },
+  "err_server_invalid": {
+    "message": "Die Serveradresse ist ungültig."
+  },
+  "err_login_flow": {
+    "message": "Anmeldung bei Nextcloud fehlgeschlagen. Versuche es mit einem App-Passwort."
+  },
+  "err_permission": {
+    "message": "Ohne Zugriff auf deinen Server kann die Erweiterung nicht synchronisieren."
+  },
+  "err_fields": {
+    "message": "Gib Benutzername und App-Passwort ein."
+  },
+  "err_wrong_password": {
+    "message": "Falsches Master-Passwort."
+  },
+  "opt_subtitle": {
+    "message": "Speichere, was du im Web findest – verschlüsselt in deiner Nextcloud."
+  },
+  "opt_account_title": {
+    "message": "Nextcloud-Konto"
+  },
+  "opt_account_help": {
+    "message": "Verwende denselben Server wie in der Android- oder Desktop-App. Die Notizen liegen im Ordner MisNotas."
+  },
+  "opt_server": {
+    "message": "Server"
+  },
+  "opt_login_button": {
+    "message": "Mit Nextcloud anmelden"
+  },
+  "opt_manual_toggle": {
+    "message": "App-Passwort verwenden"
+  },
+  "opt_login_waiting": {
+    "message": "Erlaube den Zugriff im gerade geöffneten Nextcloud-Tab…"
+  },
+  "opt_manual_help": {
+    "message": "Erstelle es in Nextcloud → Persönliche Einstellungen → Sicherheit → Geräte & Sitzungen. Verwende nicht dein normales Passwort."
+  },
+  "opt_username": {
+    "message": "Benutzername"
+  },
+  "opt_app_password": {
+    "message": "App-Passwort"
+  },
+  "opt_connect": {
+    "message": "Verbinden"
+  },
+  "opt_connected_as": {
+    "message": "Verbunden als $1 mit $2."
+  },
+  "opt_connected_ok": {
+    "message": "Konto verbunden."
+  },
+  "opt_disconnect": {
+    "message": "Trennen"
+  },
+  "opt_disconnect_confirm": {
+    "message": "Konto von diesem Browser trennen? Deine Notizen bleiben in Nextcloud."
+  },
+  "opt_disconnect_confirm_pending": {
+    "message": "$1 Element(e) wurden noch nicht hochgeladen und gehen verloren. Trotzdem trennen?"
+  },
+  "opt_vault_title": {
+    "message": "Master-Passwort"
+  },
+  "opt_vault_needs_account": {
+    "message": "Verbinde zuerst dein Nextcloud-Konto."
+  },
+  "opt_vault_help": {
+    "message": "Dasselbe wie in den Apps. Es verlässt nie diesen Browser: Die Notizen werden damit vor dem Senden verschlüsselt."
+  },
+  "opt_master_password": {
+    "message": "Master-Passwort"
+  },
+  "opt_remember_key": {
+    "message": "In diesem Browser merken"
+  },
+  "opt_remember_key_help": {
+    "message": "Gespeichert wird der abgeleitete Schlüssel, nicht das Passwort, und der Browser lässt ihn nicht auslesen. Andernfalls wird bei jedem Browserstart danach gefragt."
+  },
+  "opt_unlock": {
+    "message": "Entsperren"
+  },
+  "opt_unlocked_ok": {
+    "message": "Passwort bestätigt."
+  },
+  "opt_vault_unlocked": {
+    "message": "Bereit. Notizen werden im Browser verschlüsselt, bevor sie an Nextcloud gehen."
+  },
+  "opt_forget_key": {
+    "message": "Schlüssel vergessen"
+  },
+  "opt_prefs_title": {
+    "message": "Beim Speichern"
+  },
+  "opt_default_folder": {
+    "message": "Standardordner"
+  },
+  "opt_refresh": {
+    "message": "Aktualisieren"
+  },
+  "opt_default_folder_help": {
+    "message": "Wird im Kontextmenü verwendet. Das Erweiterungsfenster merkt sich den zuletzt gewählten Ordner."
+  },
+  "opt_save_images": {
+    "message": "Kopie der Bilder speichern"
+  },
+  "opt_save_images_help": {
+    "message": "Sie werden zu WebP verkleinert und verschlüsselt hochgeladen, wie in den Apps – unabhängig von der Originalseite."
+  },
+  "opt_images_permission": {
+    "message": "Um Bilder von beliebigen Seiten zu kopieren, ist eine Download-Berechtigung nötig. Ohne sie bleiben manche als Link."
+  },
+  "opt_images_permission_button": {
+    "message": "Erlauben"
+  },
+  "opt_add_source": {
+    "message": "Quelle hinzufügen"
+  },
+  "opt_add_source_help": {
+    "message": "Ein Link zur Originalseite am Ende der Notiz."
+  },
+  "opt_ingredients_tasks": {
+    "message": "Zutaten als Checkliste"
+  },
+  "opt_ingredients_tasks_help": {
+    "message": "In Rezepten, zum Abhaken beim Einkaufen oder Kochen."
+  },
+  "opt_shortcut": {
+    "message": "Tastenkürzel: Alt+Umschalt+S."
+  },
+  "opt_shortcut_link": {
+    "message": "Ändern"
+  },
+  "opt_queue_title": {
+    "message": "Warten auf Upload"
+  },
+  "opt_queue_help": {
+    "message": "Sie sind bereits in diesem Browser verschlüsselt und werden alle 15 Minuten erneut versucht."
+  },
+  "queue_note": {
+    "message": "Notiz"
+  },
+  "queue_folder": {
+    "message": "Ordner"
+  },
+  "opt_retry": {
+    "message": "Jetzt erneut versuchen"
+  },
+  "opt_discard": {
+    "message": "Verwerfen"
+  },
+  "opt_discard_confirm": {
+    "message": "Alles Ausstehende verwerfen? Das lässt sich nicht rückgängig machen."
+  },
+  "opt_queue_still": {
+    "message": "$1 warten noch."
+  },
+  "opt_queue_done": {
+    "message": "Alles hochgeladen."
+  },
+  "opt_about": {
+    "message": "Mis Notas für Browser · Freie Software (GPL v3) · Keine Werbung, keine Tracker"
+  }
+}

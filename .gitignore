@@ -1,0 +1,4 @@
+dist/
+firefox/
+.DS_Store
+*.xpi

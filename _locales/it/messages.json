@@ -1,0 +1,323 @@
+{
+  "ext_name": {
+    "message": "Mis Notas"
+  },
+  "ext_description": {
+    "message": "Salva ricette, articoli e link in Mis Notas, cifrati e sincronizzati con il tuo Nextcloud."
+  },
+  "cmd_open": {
+    "message": "Salva la pagina corrente"
+  },
+  "menu_save_page": {
+    "message": "Salva la pagina in Mis Notas"
+  },
+  "menu_save_selection": {
+    "message": "Salva la selezione in Mis Notas"
+  },
+  "menu_save_link": {
+    "message": "Salva il link in Mis Notas"
+  },
+  "menu_save_image": {
+    "message": "Salva l'immagine in Mis Notas"
+  },
+  "badge_pending": {
+    "message": "$1 in attesa di caricamento"
+  },
+  "source_label": {
+    "message": "Fonte"
+  },
+  "recipe_servings": {
+    "message": "Porzioni"
+  },
+  "recipe_prep": {
+    "message": "Preparazione"
+  },
+  "recipe_cook": {
+    "message": "Cottura"
+  },
+  "recipe_total": {
+    "message": "Totale"
+  },
+  "recipe_calories": {
+    "message": "Calorie"
+  },
+  "recipe_ingredients": {
+    "message": "Ingredienti"
+  },
+  "recipe_steps": {
+    "message": "Procedimento"
+  },
+  "popup_settings": {
+    "message": "Impostazioni"
+  },
+  "mode_recipe": {
+    "message": "Ricetta"
+  },
+  "mode_article": {
+    "message": "Articolo"
+  },
+  "mode_selection": {
+    "message": "Selezione"
+  },
+  "mode_page": {
+    "message": "Pagina"
+  },
+  "mode_link": {
+    "message": "Link"
+  },
+  "field_title": {
+    "message": "Titolo"
+  },
+  "field_folder": {
+    "message": "Cartella"
+  },
+  "field_content": {
+    "message": "Contenuto (Markdown)"
+  },
+  "folder_none": {
+    "message": "Nessuna cartella"
+  },
+  "folder_new_option": {
+    "message": "＋ Nuova cartella…"
+  },
+  "folder_new_placeholder": {
+    "message": "Nome della cartella"
+  },
+  "folder_create": {
+    "message": "Crea"
+  },
+  "cancel": {
+    "message": "Annulla"
+  },
+  "save": {
+    "message": "Salva"
+  },
+  "opt_save_images_short": {
+    "message": "Salva una copia delle immagini"
+  },
+  "popup_not_scriptable": {
+    "message": "In questa pagina si può salvare solo il link."
+  },
+  "popup_folder_queued": {
+    "message": "Cartella creata. Verrà caricata appena torna la connessione."
+  },
+  "popup_empty": {
+    "message": "La nota è vuota."
+  },
+  "popup_saved": {
+    "message": "Salvata in Mis Notas."
+  },
+  "popup_queued": {
+    "message": "Salvata nel browser; verrà caricata su Nextcloud appena possibile"
+  },
+  "popup_open_settings": {
+    "message": "Apri impostazioni"
+  },
+  "popup_not_configured": {
+    "message": "Collega il tuo Nextcloud per iniziare a salvare note."
+  },
+  "popup_locked": {
+    "message": "Inserisci la password principale per cifrare le note."
+  },
+  "popup_unlock": {
+    "message": "Sblocca"
+  },
+  "err_not_configured": {
+    "message": "Nessun account Nextcloud collegato."
+  },
+  "err_locked": {
+    "message": "Serve la password principale (nelle impostazioni)."
+  },
+  "err_auth": {
+    "message": "Nextcloud ha rifiutato l'utente o la password per app."
+  },
+  "err_network": {
+    "message": "Impossibile raggiungere il server."
+  },
+  "err_server": {
+    "message": "Il server ha restituito un errore."
+  },
+  "err_unknown": {
+    "message": "Si è verificato un errore imprevisto."
+  },
+  "err_root_missing": {
+    "message": "Questo account non ha ancora la cartella MisNotas. Attiva prima la sincronizzazione nell'app Android o desktop."
+  },
+  "err_vault_missing": {
+    "message": "Manca keyinfo.json nella cartella MisNotas. Sincronizza prima dall'app Android o desktop."
+  },
+  "err_vault_changed": {
+    "message": "La password principale è stata cambiata su un altro dispositivo. Inseriscila di nuovo nelle impostazioni."
+  },
+  "err_folder_name": {
+    "message": "Inserisci un nome per la cartella."
+  },
+  "err_server_empty": {
+    "message": "Inserisci l'indirizzo del tuo Nextcloud."
+  },
+  "err_server_invalid": {
+    "message": "L'indirizzo del server non è valido."
+  },
+  "err_login_flow": {
+    "message": "Accesso con Nextcloud non riuscito. Prova con una password per app."
+  },
+  "err_permission": {
+    "message": "Senza il permesso di accedere al server l'estensione non può sincronizzare."
+  },
+  "err_fields": {
+    "message": "Inserisci utente e password per app."
+  },
+  "err_wrong_password": {
+    "message": "Password principale errata."
+  },
+  "opt_subtitle": {
+    "message": "Salva ciò che trovi sul web, cifrato nel tuo Nextcloud."
+  },
+  "opt_account_title": {
+    "message": "Account Nextcloud"
+  },
+  "opt_account_help": {
+    "message": "Usa lo stesso server dell'app Android o desktop. Le note vengono salvate nella cartella MisNotas."
+  },
+  "opt_server": {
+    "message": "Server"
+  },
+  "opt_login_button": {
+    "message": "Accedi con Nextcloud"
+  },
+  "opt_manual_toggle": {
+    "message": "Usa una password per app"
+  },
+  "opt_login_waiting": {
+    "message": "Autorizza l'accesso nella scheda di Nextcloud appena aperta…"
+  },
+  "opt_manual_help": {
+    "message": "Creala in Nextcloud → Impostazioni personali → Sicurezza → Dispositivi e sessioni. Non usare la password normale."
+  },
+  "opt_username": {
+    "message": "Nome utente"
+  },
+  "opt_app_password": {
+    "message": "Password per app"
+  },
+  "opt_connect": {
+    "message": "Collega"
+  },
+  "opt_connected_as": {
+    "message": "Collegato come $1 su $2."
+  },
+  "opt_connected_ok": {
+    "message": "Account collegato."
+  },
+  "opt_disconnect": {
+    "message": "Scollega"
+  },
+  "opt_disconnect_confirm": {
+    "message": "Scollegare l'account da questo browser? Le note restano in Nextcloud."
+  },
+  "opt_disconnect_confirm_pending": {
+    "message": "$1 elemento/i non caricato/i andranno persi. Scollegare comunque?"
+  },
+  "opt_vault_title": {
+    "message": "Password principale"
+  },
+  "opt_vault_needs_account": {
+    "message": "Prima collega il tuo account Nextcloud."
+  },
+  "opt_vault_help": {
+    "message": "La stessa che usi nelle app. Non lascia mai questo browser: le note vengono cifrate con essa prima dell'invio."
+  },
+  "opt_master_password": {
+    "message": "Password principale"
+  },
+  "opt_remember_key": {
+    "message": "Ricorda in questo browser"
+  },
+  "opt_remember_key_help": {
+    "message": "Viene salvata la chiave derivata, non la password, e il browser non permette di leggerla. Altrimenti verrà chiesta a ogni apertura del browser."
+  },
+  "opt_unlock": {
+    "message": "Sblocca"
+  },
+  "opt_unlocked_ok": {
+    "message": "Password verificata."
+  },
+  "opt_vault_unlocked": {
+    "message": "Pronto. Le note vengono cifrate nel browser prima di essere inviate a Nextcloud."
+  },
+  "opt_forget_key": {
+    "message": "Dimentica la chiave"
+  },
+  "opt_prefs_title": {
+    "message": "Al salvataggio"
+  },
+  "opt_default_folder": {
+    "message": "Cartella predefinita"
+  },
+  "opt_refresh": {
+    "message": "Aggiorna"
+  },
+  "opt_default_folder_help": {
+    "message": "Usata dal menu contestuale. La finestra dell'estensione ricorda l'ultima cartella scelta."
+  },
+  "opt_save_images": {
+    "message": "Salva una copia delle immagini"
+  },
+  "opt_save_images_help": {
+    "message": "Vengono ridotte in WebP e caricate cifrate, come nelle app, così non dipendono dal sito originale."
+  },
+  "opt_images_permission": {
+    "message": "Per copiare le immagini da qualsiasi sito serve il permesso di scaricarle. Senza, alcune resteranno come link."
+  },
+  "opt_images_permission_button": {
+    "message": "Concedi"
+  },
+  "opt_add_source": {
+    "message": "Aggiungi la fonte"
+  },
+  "opt_add_source_help": {
+    "message": "Un link alla pagina originale in fondo alla nota."
+  },
+  "opt_ingredients_tasks": {
+    "message": "Ingredienti come lista di attività"
+  },
+  "opt_ingredients_tasks_help": {
+    "message": "Nelle ricette, per spuntarli mentre fai la spesa o cucini."
+  },
+  "opt_shortcut": {
+    "message": "Scorciatoia da tastiera: Alt+Maiusc+S."
+  },
+  "opt_shortcut_link": {
+    "message": "Modifica"
+  },
+  "opt_queue_title": {
+    "message": "In attesa di caricamento"
+  },
+  "opt_queue_help": {
+    "message": "Sono già cifrate in questo browser e vengono ritentate ogni 15 minuti."
+  },
+  "queue_note": {
+    "message": "Nota"
+  },
+  "queue_folder": {
+    "message": "Cartella"
+  },
+  "opt_retry": {
+    "message": "Riprova ora"
+  },
+  "opt_discard": {
+    "message": "Scarta"
+  },
+  "opt_discard_confirm": {
+    "message": "Scartare tutto ciò che è in attesa? Non si potrà recuperare."
+  },
+  "opt_queue_still": {
+    "message": "Ne restano $1."
+  },
+  "opt_queue_done": {
+    "message": "Tutto caricato."
+  },
+  "opt_about": {
+    "message": "Mis Notas per browser · Software libero (GPL v3) · Senza pubblicità né tracker"
+  }
+}
