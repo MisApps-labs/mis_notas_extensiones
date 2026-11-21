@@ -37,10 +37,12 @@ El Markdown se genera a medida del lector de Mis Notas: imágenes en su propia l
 
 ## Instalación
 
-Descarga la última versión desde [**Releases**](https://github.com/ferlagod/mis_notas_extensiones/releases/latest):
+**Firefox**: instálala desde [addons.mozilla.org](https://addons.mozilla.org/es-ES/firefox/addon/misnotas/) (se actualiza sola).
+
+Para los demás navegadores, descarga la última versión desde [**Releases**](https://github.com/ferlagod/mis_notas_extensiones/releases/latest):
 
 - `mis-notas-chromium-<versión>.zip` → Chrome, Edge, Brave, Vivaldi, Opera…
-- `mis-notas-firefox-<versión>.zip` → Firefox 128 o posterior
+- `mis-notas-firefox-<versión>.zip` → Firefox 128 o posterior (instalación manual; lo recomendable es usar [addons.mozilla.org](https://addons.mozilla.org/es-ES/firefox/addon/misnotas/))
 
 ### Chrome, Edge, Brave, Vivaldi, Opera…
 
@@ -59,10 +61,14 @@ git clone https://github.com/ferlagod/mis_notas_extensiones.git
 
 ### Firefox
 
+La forma recomendada es instalarla desde [**addons.mozilla.org**](https://addons.mozilla.org/es-ES/firefox/addon/misnotas/): pulsa **Añadir a Firefox** y se mantendrá actualizada automáticamente.
+
+Si prefieres cargarla a mano (por ejemplo, para probar cambios):
+
 1. Descomprime `mis-notas-firefox-<versión>.zip` (o genéralo tú con `tools/build.sh firefox`, que crea la carpeta `firefox/`).
 2. Abre `about:debugging` → **Este Firefox** → **Cargar complemento temporal…** y elige el `manifest.json` de esa carpeta.
 
-Firefox elimina los complementos temporales al cerrarse. Para tenerla instalada de forma permanente sin firmarla en addons.mozilla.org, usa Firefox Developer Edition, Nightly o ESR, pon `xpinstall.signatures.required` a `false` en `about:config`, cambia la extensión del zip a `.xpi` e instálalo desde `about:addons` → engranaje → **Instalar complemento desde archivo…**
+Firefox elimina los complementos temporales al cerrarse. Para tener instalada de forma permanente una versión sin firmar, usa Firefox Developer Edition, Nightly o ESR, pon `xpinstall.signatures.required` a `false` en `about:config`, cambia la extensión del zip a `.xpi` e instálalo desde `about:addons` → engranaje → **Instalar complemento desde archivo…**
 
 ## Configuración
 
