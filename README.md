@@ -15,7 +15,7 @@
 
 ---
 
-Es la extensión de la familia [Mis Notas para Android](https://github.com/ferlagod/mis_notas) y [Mis Notas para escritorio](https://github.com/ferlagod/mis_notas_desktop). Usa el mismo [formato de sincronización](https://github.com/ferlagod/mis_notas_desktop/blob/main/docs/SYNC_FORMAT.md), el mismo Nextcloud y la misma contraseña maestra, así que lo que guardas en el navegador aparece en el móvil y en el ordenador.
+Es la extensión de la familia [Mis Notas para Android](https://github.com/MisApps-labs/mis_notas) y [Mis Notas para escritorio](https://github.com/MisApps-labs/mis_notas_desktop). Usa el mismo [formato de sincronización](https://github.com/MisApps-labs/mis_notas_desktop/blob/main/docs/SYNC_FORMAT.md), el mismo Nextcloud y la misma contraseña maestra, así que lo que guardas en el navegador aparece en el móvil y en el ordenador.
 
 ## Qué hace
 
@@ -39,7 +39,7 @@ El Markdown se genera a medida del lector de Mis Notas: imágenes en su propia l
 
 **Firefox**: instálala desde [addons.mozilla.org](https://addons.mozilla.org/es-ES/firefox/addon/misnotas/) (se actualiza sola).
 
-Para los demás navegadores, descarga la última versión desde [**Releases**](https://github.com/ferlagod/mis_notas_extensiones/releases/latest):
+Para los demás navegadores, descarga la última versión desde [**Releases**](https://github.com/MisApps-labs/mis_notas_extensiones/releases/latest):
 
 - `mis-notas-chromium-<versión>.zip` → Chrome, Edge, Brave, Vivaldi, Opera…
 - `mis-notas-firefox-<versión>.zip` → Firefox 128 o posterior (instalación manual; lo recomendable es usar [addons.mozilla.org](https://addons.mozilla.org/es-ES/firefox/addon/misnotas/))
@@ -56,7 +56,7 @@ Para actualizar, sustituye el contenido de la carpeta por el de la nueva versió
 También puedes clonar el repositorio y cargar directamente su raíz:
 
 ```bash
-git clone https://github.com/ferlagod/mis_notas_extensiones.git
+git clone https://github.com/MisApps-labs/mis_notas_extensiones.git
 ```
 
 ### Firefox
@@ -137,7 +137,7 @@ tools/build.sh firefox    # además genera firefox/ y su zip
 
 ## Contribuir
 
-Los avisos de errores y las propuestas son bienvenidos en [Issues](https://github.com/ferlagod/mis_notas_extensiones/issues). Si cambias algo del cifrado o del formato de las notas, debe seguir siendo compatible con el [formato de sincronización](https://github.com/ferlagod/mis_notas_desktop/blob/main/docs/SYNC_FORMAT.md) que usan las apps.
+Los avisos de errores y las propuestas son bienvenidos en [Issues](https://github.com/MisApps-labs/mis_notas_extensiones/issues). Si cambias algo del cifrado o del formato de las notas, debe seguir siendo compatible con el [formato de sincronización](https://github.com/MisApps-labs/mis_notas_desktop/blob/main/docs/SYNC_FORMAT.md) que usan las apps.
 
 ## Licencia
 
