@@ -7,7 +7,7 @@ import {
   normalizeServer, buildRootUrl, requestServerPermission, startLoginFlow, fetchUserId, originPattern
 } from '../lib/nextcloud.js';
 import { passwordVariants, deriveKeyBytes, importAesKey } from '../lib/crypto.js';
-import { verifyKey } from '../lib/codec.js';
+import { verifyKey, openVaultV3, LEGACY_KID } from '../lib/codec.js';
 import { fetchKeyInfo, errorCode } from '../lib/sync.js';
 import {
   getAccount, setAccount, clearAccount, getKey, setKey, clearKey, setVault, getPrefs, setPrefs,
@@ -222,15 +222,25 @@ async function unlock() {
   notice('vault-notice', '');
   try {
     const info = await fetchKeyInfo();
-    let raw = null;
-    for (const variant of passwordVariants(password)) {
-      const bytes = await deriveKeyBytes(variant, info.salt, info.iterations);
-      if (await verifyKey(info, await importAesKey(bytes))) { raw = bytes; break; }
+    if (info.version >= 3) {
+      // Bóveda v3 (actualizada desde el móvil): Argon2id + cifrado en sobre.
+      const opened = await openVaultV3(info, password);
+      if (!opened) { notice('vault-notice', t('err_wrong_password')); return; }
+      await setKey({ v3: true, current: opened.current, keys: opened.keys, vmk: opened.vmk }, $('remember').checked);
+      opened.vmk.fill(0);
+      Object.values(opened.keys).forEach((k) => k.fill(0));
+      await setVault({ v3: true, keyring: info.keyring, password: info.password });
+    } else {
+      let raw = null;
+      for (const variant of passwordVariants(password)) {
+        const bytes = await deriveKeyBytes(variant, info.salt, info.iterations);
+        if (await verifyKey(info, await importAesKey(bytes))) { raw = bytes; break; }
+      }
+      if (!raw) { notice('vault-notice', t('err_wrong_password')); return; }
+      await setKey({ v3: false, current: LEGACY_KID, keys: { [LEGACY_KID]: raw } }, $('remember').checked);
+      raw.fill(0);
+      await setVault({ saltB64: info.saltB64, iterations: info.iterations, check: info.check });
     }
-    if (!raw) { notice('vault-notice', t('err_wrong_password')); return; }
-    await setKey(raw, $('remember').checked);
-    raw.fill(0);
-    await setVault({ saltB64: info.saltB64, iterations: info.iterations, check: info.check });
     await setPrefs({ rememberKey: $('remember').checked });
     $('master').value = '';
     notice('vault-notice', t('opt_unlocked_ok'), 'ok');

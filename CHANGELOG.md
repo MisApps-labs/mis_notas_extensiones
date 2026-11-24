@@ -1,5 +1,11 @@
 # Cambios
 
+## 1.1.0 — 2026-11-24
+
+- Compatibilidad con el **cifrado v3** de Mis Notas para Android 1.1 (Argon2id, cifrado en sobre, llavero con varias claves, ficheros con `kid`, `rev` y relleno, lápidas cifradas). Una bóveda actualizada en el móvil se desbloquea aquí con la misma contraseña; las rotaciones de clave de otros dispositivos se recogen solas.
+- Si el servidor ofrece un `keyinfo.json` más antiguo que el conocido (v2 tras v3), la extensión no sube nada.
+- Pruebas del formato (`node --test tests/`) contra bóvedas v2 y v3 creadas por la app Android.
+
 ## 1.0.0 — 2026-11-15
 
 Primera versión.

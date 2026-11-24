@@ -108,30 +108,74 @@ const asPromise = (req) => new Promise((resolve, reject) => {
 });
 
 /**
- * Guarda la clave. Si remember es true, como CryptoKey no exportable en IndexedDB (sus bytes
- * no se pueden leer); si no, en chrome.storage.session, que vive solo en memoria.
+ * Guarda las claves desbloqueadas. [ring] = { v3, current, keys: { kid: bytes }, vmk?: bytes }.
+ * Si remember es true, como CryptoKey no exportables en IndexedDB (sus bytes no se pueden
+ * leer); si no, en chrome.storage.session, que vive solo en memoria.
  */
-export async function setKey(rawBytes, remember) {
+export async function setKey(ring, remember) {
   await clearKey();
   if (remember) {
-    const key = await importAesKey(rawBytes, false);
-    await tx('keys', 'readwrite', (s) => s.put(key, 'vault'));
+    const keys = {};
+    for (const [kid, bytes] of Object.entries(ring.keys)) keys[kid] = await importAesKey(bytes, false);
+    const vmk = ring.vmk ? await importAesKey(ring.vmk, false) : null;
+    await tx('keys', 'readwrite', (s) => s.put({ v3: Boolean(ring.v3), current: ring.current, keys, vmk }, 'ring'));
   } else {
-    await chrome.storage.session.set({ vaultKey: toBase64(rawBytes) });
+    const keys = {};
+    for (const [kid, bytes] of Object.entries(ring.keys)) keys[kid] = toBase64(bytes);
+    await chrome.storage.session.set({
+      vaultRing: { v3: Boolean(ring.v3), current: ring.current, keys, vmk: ring.vmk ? toBase64(ring.vmk) : null }
+    });
   }
 }
 
-/** La clave de cifrado, o null si no está desbloqueada. */
+/** ¿Se guardaron las claves en IndexedDB ("recordar") o solo en la sesión? */
+export async function keyRemembered() {
+  return Boolean(await tx('keys', 'readonly', (s) => asPromise(s.get('ring'))) ||
+    await tx('keys', 'readonly', (s) => asPromise(s.get('vault'))));
+}
+
+/**
+ * El llavero desbloqueado { v3, current, keys: Map<kid, CryptoKey>, vmk: CryptoKey|null }, o null.
+ * Entiende también la clave suelta que guardaban las versiones 1.0 (bóveda v2).
+ */
 export async function getKey() {
-  const stored = await tx('keys', 'readonly', (s) => asPromise(s.get('vault')));
-  if (stored) return stored;
-  const { vaultKey } = await chrome.storage.session.get('vaultKey');
-  return vaultKey ? importAesKey(fromBase64(vaultKey), false) : null;
+  const stored = await tx('keys', 'readonly', (s) => asPromise(s.get('ring')));
+  if (stored) return { v3: stored.v3, current: stored.current, keys: new Map(Object.entries(stored.keys)), vmk: stored.vmk };
+  const legacy = await tx('keys', 'readonly', (s) => asPromise(s.get('vault')));
+  if (legacy) return { v3: false, current: 'v2', keys: new Map([['v2', legacy]]), vmk: null };
+  const { vaultRing, vaultKey } = await chrome.storage.session.get(['vaultRing', 'vaultKey']);
+  if (vaultRing) {
+    const keys = new Map();
+    for (const [kid, b64] of Object.entries(vaultRing.keys)) keys.set(kid, await importAesKey(fromBase64(b64), false));
+    return { v3: vaultRing.v3, current: vaultRing.current, keys, vmk: vaultRing.vmk ? await importAesKey(fromBase64(vaultRing.vmk), false) : null };
+  }
+  if (vaultKey) return { v3: false, current: 'v2', keys: new Map([['v2', await importAesKey(fromBase64(vaultKey), false)]]), vmk: null };
+  return null;
+}
+
+/**
+ * Otro dispositivo rotó la clave: guarda el llavero nuevo ([opened] = { current, keys: { kid: bytes } })
+ * conservando la VMK que ya había (no cambia al rotar).
+ */
+export async function updateRing(opened, remember) {
+  if (remember) {
+    const stored = await tx('keys', 'readonly', (s) => asPromise(s.get('ring')));
+    if (!stored) return;
+    const keys = {};
+    for (const [kid, bytes] of Object.entries(opened.keys)) keys[kid] = await importAesKey(bytes, false);
+    await tx('keys', 'readwrite', (s) => s.put({ ...stored, current: opened.current, keys }, 'ring'));
+  } else {
+    const { vaultRing } = await chrome.storage.session.get('vaultRing');
+    if (!vaultRing) return;
+    const keys = {};
+    for (const [kid, bytes] of Object.entries(opened.keys)) keys[kid] = toBase64(bytes);
+    await chrome.storage.session.set({ vaultRing: { ...vaultRing, current: opened.current, keys } });
+  }
 }
 
 export async function clearKey() {
-  await tx('keys', 'readwrite', (s) => s.delete('vault'));
-  await chrome.storage.session.remove('vaultKey');
+  await tx('keys', 'readwrite', (s) => { s.delete('vault'); s.delete('ring'); });
+  await chrome.storage.session.remove(['vaultKey', 'vaultRing']);
 }
 
 /**

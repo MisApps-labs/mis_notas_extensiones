@@ -95,3 +95,21 @@ export async function encryptText(plainText, key, aad = null) {
 export async function decryptText(cipherText, key, aad = null) {
   return decoder.decode(await decryptBytes(fromBase64(cipherText), key, aad));
 }
+
+/**
+ * Argon2id de las bóvedas v3 (keyinfo.json "kdf"): 32 bytes. Usa hash-wasm (vendor/argon2.umd.min.js),
+ * que debe estar cargado en la página (solo hace falta en Opciones, al desbloquear).
+ */
+export async function argon2idBytes(password, salt, kdf) {
+  const lib = globalThis.hashwasm;
+  if (!lib?.argon2id) throw new Error('argon2-missing');
+  return lib.argon2id({
+    password: encoder.encode(password),
+    salt,
+    parallelism: kdf.parallelism,
+    iterations: kdf.iterations,
+    memorySize: kdf.memoryKiB,
+    hashLength: 32,
+    outputType: 'binary'
+  });
+}

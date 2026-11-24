@@ -8,12 +8,12 @@
 
 import { WebDavClient, WebDavError } from './webdav.js';
 import {
-  KEYINFO_FILE, parseKeyInfo, verifyKey, encodeNote, encodeFolder, decodeFolder,
+  KEYINFO_FILE, parseKeyInfo, verifyKey, openKeyring, encodeNote, encodeFolder, decodeFolder,
   noteFile, folderFile
 } from './codec.js';
 import { embedImages } from './images.js';
 import {
-  getAccount, getVault, setVault, getPrefs, getKey, clearKey,
+  getAccount, getVault, setVault, getPrefs, getKey, clearKey, keyRemembered, updateRing,
   getFolderCache, setFolderCache, enqueue, getQueue, removeFromQueue
 } from './store.js';
 
@@ -52,7 +52,7 @@ async function requireKey() {
  * Regla 1 del formato: antes de escribir, comprobar que keyinfo.json sigue siendo el mismo.
  * Si la contraseña maestra se cambió desde otro dispositivo, la clave guardada ya no vale.
  */
-async function checkVault(dav, key) {
+async function checkVault(dav, ring) {
   const raw = await dav.getTextOrNull(KEYINFO_FILE);
   if (raw === null) {
     if (!(await dav.rootExists())) throw new AppError('root_missing');
@@ -60,10 +60,37 @@ async function checkVault(dav, key) {
   }
   const info = parseKeyInfo(raw);
   const cached = await getVault();
+  if (info.version >= 3) {
+    // Bóveda actualizada a v3 desde el móvil: sin la VMK hay que volver a escribir la contraseña.
+    if (!ring.v3 || !ring.vmk) {
+      await clearKey();
+      throw new AppError('vault_changed');
+    }
+    if (cached && cached.v3 && cached.keyring === info.keyring && cached.password === info.password) return;
+    let opened;
+    try {
+      opened = await openKeyring(info, ring.vmk);
+    } catch {
+      await clearKey();
+      throw new AppError('vault_changed');
+    }
+    // Un llavero con menos claves que el conocido sería una vuelta atrás.
+    for (const kid of ring.keys.keys()) if (!(kid in opened.keys)) throw new AppError('vault_changed');
+    if (opened.current !== ring.current || Object.keys(opened.keys).length !== ring.keys.size) {
+      // Otro dispositivo rotó la clave: se guardan las nuevas (la VMK no cambia).
+      await updateRing(opened, await keyRemembered());
+    }
+    await setVault({ v3: true, keyring: info.keyring, password: info.password });
+    return;
+  }
+  if (ring.v3) {
+    // El servidor ofrece un keyinfo v2 a un dispositivo en v3: no se sigue.
+    throw new AppError('vault_changed');
+  }
   if (cached && cached.check === info.check && cached.saltB64 === info.saltB64 && cached.iterations === info.iterations) {
     return;
   }
-  if (!(await verifyKey(info, key))) {
+  if (!(await verifyKey(info, ring.keys.get(ring.current)))) {
     await clearKey();
     throw new AppError('vault_changed');
   }

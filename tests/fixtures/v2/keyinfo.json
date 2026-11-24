@@ -1,0 +1,8 @@
+{
+  "salt": "sRJnoviSbpcYf0h6GoPRmw==",
+  "format": "misnotas-keyinfo",
+  "check": "GOReE5KAzeIG0xN7kAKsH90zWHeAfJHZy0IQKMwBrwCRA6TnGVepAOQPKcTTdIy0vw==",
+  "kdf": "PBKDF2WithHmacSHA256",
+  "version": 1,
+  "iterations": 10000
+}

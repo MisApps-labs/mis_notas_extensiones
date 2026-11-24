@@ -1,0 +1,16 @@
+{
+  "password": "bWLuMuEVzPs74Wf2h3IzDZz+stW3L0ZOWNYU4p+ho9pinBDftg9JV4xCHP5Gb/14iCooSl8PcXXcVBSb9mf3RhJ9ki6KBJRS",
+  "format": "misnotas-keyinfo",
+  "recoverySalt": "+5Q2IqRhR1qDxRHBAKb1ww==",
+  "recovery": "X6AMCM3Ll7mAAQkBUw0II3i6uNUf0Cd8e5uGVcQsBrAntf/Cc2B7apBw7mhbOKPWMbo9VwUyRI8VXzVmiuhGvF/IAC+3/+X7",
+  "kdf": {
+    "salt": "h4+NKS0TCozBNda7PtkPdQ==",
+    "parallelism": 1,
+    "name": "argon2id",
+    "memoryKiB": 8192,
+    "version": 19,
+    "iterations": 1
+  },
+  "version": 3,
+  "keyring": "AdpSvB8FDoYQt6Vt8OOJpNs/59bTFqs3Ft13q+oRiLxkKBJcO0u5/0c2uKy/fi1a1b7qy93/g+beQCs7s400dk+fy10gMteAM4bXILtWMR/v/LahBn2IdFdDSVYnzX0O8sSgbJnCC839ePYPm+TgfPJ/U2NYl6GT4pboScthoBO4lNaAE3v/MUXKf5EI2QD80ppmtI2vgg2sK+RG1m561pcugTTbdMTRNpflK6hpfVcadIQ="
+}

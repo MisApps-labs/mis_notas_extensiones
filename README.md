@@ -83,9 +83,10 @@ La página de ajustes se abre sola al instalar la extensión (y siempre desde el
 ## Privacidad y seguridad
 
 - **Cifrado de extremo a extremo** idéntico al de las apps: AES-256-GCM con una clave derivada de tu contraseña maestra (PBKDF2-HMAC-SHA256, 600.000 iteraciones), con los datos asociados `note:<id>`, `folder:<id>` y `attachment:<id>`. Nextcloud solo recibe datos ilegibles.
+- Compatible con el **cifrado v3** que se activa desde la app de Android: Argon2id, cifrado en sobre, rotación de clave y ficheros con relleno. Argon2id se calcula con [hash-wasm](https://github.com/Daninet/hash-wasm), incluida en `vendor/`; por eso la extensión declara `'wasm-unsafe-eval'` (permite ejecutar WebAssembly empaquetado en la propia extensión, no código remoto).
 - **La contraseña maestra no se guarda.** Se guarda la clave derivada como `CryptoKey` **no exportable** en IndexedDB: el navegador puede usarla para cifrar, pero no deja leer sus bytes. Si desmarcas *Recordar en este navegador*, la clave vive solo en memoria y se pide de nuevo al abrir el navegador.
 - La extensión **solo crea ficheros nuevos** (`If-None-Match: *`): nunca modifica ni borra notas existentes, así que no puede pisar cambios de tus otros dispositivos.
-- Antes de cada subida comprueba `keyinfo.json`. Si cambias la contraseña maestra en otro dispositivo, la extensión lo detecta y te la vuelve a pedir.
+- Antes de cada subida comprueba `keyinfo.json`. Si cambias la contraseña maestra en otro dispositivo, la extensión lo detecta y te la vuelve a pedir; si otro dispositivo rota la clave (v3), recoge la nueva sin pedir nada. Si el servidor ofreciera una configuración de cifrado más antigua que la conocida, no sube nada.
 - Las peticiones a Nextcloud van **sin cookies**, así que no interfieren con tu sesión web de Nextcloud.
 - **Permisos**:
   - *Pestaña activa* y *scripting*: leer la página **solo cuando tú pulsas** el icono, el menú contextual o el atajo.
@@ -100,8 +101,8 @@ No hace falta compilar nada: es JavaScript estándar (módulos ES) y se carga ta
 ```
 manifest.json
 src/background.js        service worker: menú contextual, mensajes, cola y alarmas
-src/lib/crypto.js        PBKDF2 + AES-GCM (equivale a CryptoManager.kt)
-src/lib/codec.js         keyinfo.json, notas y carpetas v2 (KeyInfo.kt / RemoteCodec.kt)
+src/lib/crypto.js        PBKDF2, Argon2id + AES-GCM (equivale a CryptoManager.kt / Argon2.kt)
+src/lib/codec.js         keyinfo.json, notas y carpetas v2 y v3 (KeyInfo.kt / KeyInfoV3.kt / RemoteCodec.kt)
 src/lib/webdav.js        cliente WebDAV mínimo (PROPFIND, GET, PUT con If-None-Match)
 src/lib/nextcloud.js     direcciones, permisos, Login Flow v2 e id de usuario
 src/lib/sync.js          guardar nota/carpeta, cola sin conexión, lista de carpetas
@@ -111,7 +112,8 @@ src/lib/compose.js       inyección del extractor y pie con la fuente
 src/content/extract.js   receta / artículo / selección / página → Markdown
 src/popup/               ventana del icono
 src/options/             ajustes
-vendor/                  Readability 0.5.0, Turndown 7.2.0, turndown-plugin-gfm 1.0.2
+vendor/                  Readability 0.5.0, Turndown 7.2.0, turndown-plugin-gfm 1.0.2, hash-wasm 4.12.0 (Argon2id)
+tests/                   pruebas del formato contra bóvedas creadas por la app Android (node --test tests/)
 ```
 
 Para probar cambios, carga la raíz del repositorio como extensión descomprimida (ver [Instalación](#instalación)) y pulsa recargar tras cada cambio. No edites la carpeta `firefox/`: se genera desde la raíz.
